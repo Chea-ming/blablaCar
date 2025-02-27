@@ -18,7 +18,7 @@ class BlaButton extends StatelessWidget {
     required this.text,
     this.icon,
     this.buttonType = ButtonType.primary,
-    required this.onPressed, required Text child,
+    required this.onPressed,
 
   });
 
@@ -53,10 +53,7 @@ class BlaButton extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-          Padding(
-            padding: const EdgeInsets.only(right: 8.0),
-            child: Icon(icon, color: textColor, size: 20),
-          ),
+        Icon(icon, color: textColor, size: 20),
         Text(
           text,
           style: BlaTextStyles.button.copyWith(color: textColor),

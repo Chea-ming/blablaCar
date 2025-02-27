@@ -29,7 +29,6 @@ class MyApp extends StatelessWidget {
                 text: 'Primary',
                 icon: Icons.add,
                 buttonType: ButtonType.primary,
-                child: Text('Button 1'),
               ),
               SizedBox(height: 20),
               BlaButton(
@@ -39,7 +38,6 @@ class MyApp extends StatelessWidget {
                 text: 'Secondary',
                 icon: Icons.remove,
                 buttonType: ButtonType.secondary,
-                child: Text('Button 2'),
               ),
               SizedBox(height: 20),
               BlaButton(
@@ -48,7 +46,6 @@ class MyApp extends StatelessWidget {
                 },
                 text: 'No icon',
                 buttonType: ButtonType.primary,
-                child: Text('Button 3'),
               ),
               SizedBox(height: 20),
               BlaButton(
@@ -57,7 +54,6 @@ class MyApp extends StatelessWidget {
                 },
                 text: 'No icon',
                 buttonType: ButtonType.secondary,
-                child: Text('Button 4'),
               ),
             ],
           ),
