@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SeatCounterScreen extends StatefulWidget {
-  const SeatCounterScreen({Key? key}) : super(key: key);
+  const SeatCounterScreen({super.key});
 
   @override
   _SeatCounterScreenState createState() => _SeatCounterScreenState();

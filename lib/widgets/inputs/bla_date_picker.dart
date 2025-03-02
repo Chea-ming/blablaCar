@@ -10,7 +10,7 @@ import 'package:week_3_blabla_project/theme/theme.dart';
 /// The date picker is used in the RidePrefForm to select a departure date.
 
 class DatePickerScreen extends StatefulWidget {
-  const DatePickerScreen({Key? key}) : super(key: key);
+  const DatePickerScreen({super.key});
 
   @override
   _DatePickerScreenState createState() => _DatePickerScreenState();

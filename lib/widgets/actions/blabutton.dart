@@ -35,7 +35,6 @@ class BlaButton extends StatelessWidget {
     Color borderColor;
 
     // Set the button style based on the button type
-
     switch (buttonType) {
       case ButtonType.primary:
         backgroundColor = BlaColors.primary;

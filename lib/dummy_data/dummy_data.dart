@@ -55,6 +55,34 @@ const List<Location> fakeLocations = [
   Location(name: "Brest", country: Country.france),
 ];
 
+// Fake Streets
+
+const List<Street> fakeStreets = [
+  // Streets in UK Cities
+  Street(name: "Baker Street", city: Location(name: "London", country: Country.uk)),
+  Street(name: "Oxford Street", city: Location(name: "London", country: Country.uk)),
+  Street(name: "Deansgate", city: Location(name: "Manchester", country: Country.uk)),
+  Street(name: "Bold Street", city: Location(name: "Liverpool", country: Country.uk)),
+  Street(name: "Broad Street", city: Location(name: "Birmingham", country: Country.uk)),
+  Street(name: "Buchanan Street", city: Location(name: "Glasgow", country: Country.uk)),
+  Street(name: "Ecclesall Road", city: Location(name: "Sheffield", country: Country.uk)),
+  Street(name: "Park Street", city: Location(name: "Bristol", country: Country.uk)),
+  Street(name: "Royal Mile", city: Location(name: "Edinburgh", country: Country.uk)),
+  Street(name: "High Street", city: Location(name: "Oxford", country: Country.uk)),
+
+  // Streets in France Cities
+  Street(name: "Champs-Élysées", city: Location(name: "Paris", country: Country.france)),
+  Street(name: "Rue de Rivoli", city: Location(name: "Paris", country: Country.france)),
+  Street(name: "Rue Saint-Jean", city: Location(name: "Lyon", country: Country.france)),
+  Street(name: "La Canebière", city: Location(name: "Marseille", country: Country.france)),
+  Street(name: "Rue d'Alsace-Lorraine", city: Location(name: "Toulouse", country: Country.france)),
+  Street(name: "Avenue Jean Médecin", city: Location(name: "Nice", country: Country.france)),
+  Street(name: "Cours des 50 Otages", city: Location(name: "Nantes", country: Country.france)),
+  Street(name: "Grand'Rue", city: Location(name: "Strasbourg", country: Country.france)),
+  Street(name: "Rue Foch", city: Location(name: "Montpellier", country: Country.france)),
+  Street(name: "Rue Sainte-Catherine", city: Location(name: "Bordeaux", country: Country.france)),
+];
+
 // Fake Ride Preferences
 List<RidePref> fakeRidePrefs = [
   RidePref(
