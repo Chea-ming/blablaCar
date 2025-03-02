@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:week_3_blabla_project/screens/ride_pref/widgets/ride_pref_input_tile.dart';
 import 'package:week_3_blabla_project/theme/theme.dart';
+import 'package:week_3_blabla_project/utils/animations_util.dart';
 import 'package:week_3_blabla_project/utils/date_time_util.dart';
 import 'package:week_3_blabla_project/widgets/actions/blabutton.dart';
 import 'package:week_3_blabla_project/widgets/display/bla_divider.dart';
@@ -58,7 +59,9 @@ class _RidePrefFormState extends State<RidePrefForm> {
   void onDeparturePressed() async {
     // 1- Select a location
     Location? selectedLocation = await Navigator.of(context).push<Location>(
-        MaterialPageRoute(builder: (ctx) => BlaLocationPicker()));
+      AnimationUtils.createBottomToTopRoute<Location>(
+          BlaLocationPicker()),
+    );
 
     // 2- Update the from if needed
     if (selectedLocation != null) {
@@ -71,7 +74,8 @@ class _RidePrefFormState extends State<RidePrefForm> {
   void onArrivalPressed() async {
     // 1- Select a location
     Location? selectedLocation = await Navigator.of(context).push<Location>(
-        MaterialPageRoute(builder: (ctx) => BlaLocationPicker()));
+      AnimationUtils.createBottomToTopRoute<Location>(BlaLocationPicker()),
+    );
 
     // 2- Update the from if needed
     if (selectedLocation != null) {
