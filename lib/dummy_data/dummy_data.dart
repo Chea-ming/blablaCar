@@ -208,3 +208,56 @@ List<Ride> fakeRides = List.generate(50, (index) {
     pricePerSeat: pricePerSeat,
   );
 });
+
+
+// Fake  Rides
+
+
+List<Ride> fakeRidesSample =
+[
+  Ride(
+    departureLocation: fakeLocations[0], // London
+    departureDate: DateTime.now().add(Duration(days: 1)), // Tomorrow
+    arrivalLocation: fakeLocations[1], // Manchester
+    arrivalDateTime: DateTime.now().add(Duration(days: 1, hours: 3)), // 3 hours ride
+    driver: fakeUsers[0], // Alice
+    availableSeats: 3,
+    pricePerSeat: 15.0,
+  ),
+  Ride(
+    departureLocation: fakeLocations[2], // Birmingham
+    departureDate: DateTime.now().add(Duration(days: 2)), // In 2 days
+    arrivalLocation: fakeLocations[3], // Liverpool
+    arrivalDateTime: DateTime.now().add(Duration(days: 2, hours: 2)), // 2 hours ride
+    driver: fakeUsers[1], // Bob
+    availableSeats: 2,
+    pricePerSeat: 10.0,
+  ),
+  Ride(
+    departureLocation: fakeLocations[4], // Leeds
+    departureDate: DateTime.now().add(Duration(days: 3)), // In 3 days
+    arrivalLocation: fakeLocations[5], // Glasgow
+    arrivalDateTime: DateTime.now().add(Duration(days: 3, hours: 4)), // 4 hours ride
+    driver: fakeUsers[2], // Charlie
+    availableSeats: 4,
+    pricePerSeat: 20.0,
+  ),
+  Ride(
+    departureLocation: fakeLocations[6], // Sheffield
+    departureDate: DateTime.now().add(Duration(days: 4)), // In 4 days
+    arrivalLocation: fakeLocations[7], // Bristol
+    arrivalDateTime: DateTime.now().add(Duration(days: 4, hours: 5)), // 5 hours ride
+    driver: fakeUsers[3], // Diane
+    availableSeats: 1,
+    pricePerSeat: 25.0,
+  ),
+  Ride(
+    departureLocation: fakeLocations[8], // Edinburgh
+    departureDate: DateTime.now().add(Duration(days: 5)), // In 5 days
+    arrivalLocation: fakeLocations[9], // Leicester
+    arrivalDateTime: DateTime.now().add(Duration(days: 5, hours: 3)), // 3 hours ride
+    driver: fakeUsers[4], // Ethan
+    availableSeats: 2,
+    pricePerSeat: 12.0,
+  ),
+];

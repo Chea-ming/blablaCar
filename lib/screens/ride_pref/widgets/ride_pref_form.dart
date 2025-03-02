@@ -7,6 +7,7 @@ import 'package:week_3_blabla_project/widgets/actions/blabutton.dart';
 import 'package:week_3_blabla_project/widgets/display/bla_divider.dart';
 import 'package:week_3_blabla_project/widgets/inputs/bla_date_picker.dart';
 import 'package:week_3_blabla_project/widgets/inputs/bla_seat_spinner.dart';
+import '../../ride/ride_display.dart';
 import '../../../model/ride/locations.dart';
 import '../../../model/ride_pref/ride_pref.dart';
 import '../../../widgets/inputs/bla_location_picker.dart';
@@ -111,7 +112,27 @@ class _RidePrefFormState extends State<RidePrefForm> {
     }
   }
 
-  void onSubmit() {}
+  void onSubmit() {
+    // 1- Validate the form
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
+
+    // 2- Submit the form
+    RidePref ridePref = RidePref(
+      departure: departure!,
+      departureDate: departureDate,
+      arrival: arrival!,
+      requestedSeats: requestedSeats,
+    );
+
+    // 3- Show the avaible rides
+    Navigator.of(context).push(
+      AnimationUtils.createBottomToTopRoute<RideDisplayScreen>(
+        RideDisplayScreen(preference: ridePref),
+      ),
+    );
+  }
 
   void onSwappingLocationPressed() {
     setState(() {

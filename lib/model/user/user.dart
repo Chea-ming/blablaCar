@@ -17,4 +17,6 @@ class User {
       required this.phone,
       required this.profilePicture,
       required this.verifiedProfile});
+
+  String get name => '$firstName $lastName';
 }
