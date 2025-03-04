@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:week_3_blabla_project/model/ride/locations.dart';
+import 'package:week_3_blabla_project/repository/mock/mock_location_repository.dart';
 
 import '../../service/locations_service.dart';
 import '../../theme/theme.dart';
@@ -54,11 +55,11 @@ class _BlaLocationPickerState extends State<BlaLocationPicker> {
     });
   }
 
+
+
   List<Location> getLocationsFor(String text) {
-    return LocationsService.availableLocations
-        .where((location) =>
-            location.name.toUpperCase().contains(text.toUpperCase()))
-        .toList();
+    return LocationsService.instance.getLocations().where((location)
+     => location.name.toLowerCase().contains(text.toLowerCase())).toList();
   }
 
   @override
