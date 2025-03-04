@@ -55,67 +55,39 @@ const List<Location> fakeLocations = [
   Location(name: "Brest", country: Country.france),
 ];
 
-// Fake Streets
-
-const List<Street> fakeStreets = [
-  // Streets in UK Cities
-  Street(name: "Baker Street", city: Location(name: "London", country: Country.uk)),
-  Street(name: "Oxford Street", city: Location(name: "London", country: Country.uk)),
-  Street(name: "Deansgate", city: Location(name: "Manchester", country: Country.uk)),
-  Street(name: "Bold Street", city: Location(name: "Liverpool", country: Country.uk)),
-  Street(name: "Broad Street", city: Location(name: "Birmingham", country: Country.uk)),
-  Street(name: "Buchanan Street", city: Location(name: "Glasgow", country: Country.uk)),
-  Street(name: "Ecclesall Road", city: Location(name: "Sheffield", country: Country.uk)),
-  Street(name: "Park Street", city: Location(name: "Bristol", country: Country.uk)),
-  Street(name: "Royal Mile", city: Location(name: "Edinburgh", country: Country.uk)),
-  Street(name: "High Street", city: Location(name: "Oxford", country: Country.uk)),
-
-  // Streets in France Cities
-  Street(name: "Champs-Élysées", city: Location(name: "Paris", country: Country.france)),
-  Street(name: "Rue de Rivoli", city: Location(name: "Paris", country: Country.france)),
-  Street(name: "Rue Saint-Jean", city: Location(name: "Lyon", country: Country.france)),
-  Street(name: "La Canebière", city: Location(name: "Marseille", country: Country.france)),
-  Street(name: "Rue d'Alsace-Lorraine", city: Location(name: "Toulouse", country: Country.france)),
-  Street(name: "Avenue Jean Médecin", city: Location(name: "Nice", country: Country.france)),
-  Street(name: "Cours des 50 Otages", city: Location(name: "Nantes", country: Country.france)),
-  Street(name: "Grand'Rue", city: Location(name: "Strasbourg", country: Country.france)),
-  Street(name: "Rue Foch", city: Location(name: "Montpellier", country: Country.france)),
-  Street(name: "Rue Sainte-Catherine", city: Location(name: "Bordeaux", country: Country.france)),
-];
-
 // Fake Ride Preferences
-List<RidePref> fakeRidePrefs = [
-  RidePref(
+List<RidePreference> fakeRidePrefs = [
+  RidePreference(
     departure: fakeLocations[0], // London
     departureDate: DateTime.now().add(Duration(days: 1)), // Tomorrow
     arrival: fakeLocations[3], // Paris
     requestedSeats: 2,
   ),
-  RidePref(
+  RidePreference(
     departure: fakeLocations[1], // Manchester
     departureDate: DateTime.now().add(Duration(days: 7)), // Next week
     arrival: fakeLocations[4], // Lyon
     requestedSeats: 3,
   ),
-  RidePref(
+  RidePreference(
     departure: fakeLocations[2], // Birmingham
     departureDate: DateTime.now(), // Today
     arrival: fakeLocations[5], // Marseille
     requestedSeats: 1,
   ),
-  RidePref(
+  RidePreference(
     departure: fakeLocations[0], // London
     departureDate: DateTime.now().add(Duration(days: 1)), // Tomorrow
     arrival: fakeLocations[3], // Paris
     requestedSeats: 2,
   ),
-  RidePref(
+  RidePreference(
     departure: fakeLocations[4], // Manchester
     departureDate: DateTime.now().add(Duration(days: 7)), // Next week
     arrival: fakeLocations[0], // Lyon
     requestedSeats: 3,
   ),
-  RidePref(
+  RidePreference(
     departure: fakeLocations[5], // Birmingham
     departureDate: DateTime.now(), // Today
     arrival: fakeLocations[1], // Marseille
@@ -208,56 +180,3 @@ List<Ride> fakeRides = List.generate(50, (index) {
     pricePerSeat: pricePerSeat,
   );
 });
-
-
-// Fake  Rides
-
-
-List<Ride> fakeRidesSample =
-[
-  Ride(
-    departureLocation: fakeLocations[0], // London
-    departureDate: DateTime.now().add(Duration(days: 1)), // Tomorrow
-    arrivalLocation: fakeLocations[1], // Manchester
-    arrivalDateTime: DateTime.now().add(Duration(days: 1, hours: 3)), // 3 hours ride
-    driver: fakeUsers[0], // Alice
-    availableSeats: 3,
-    pricePerSeat: 15.0,
-  ),
-  Ride(
-    departureLocation: fakeLocations[2], // Birmingham
-    departureDate: DateTime.now().add(Duration(days: 2)), // In 2 days
-    arrivalLocation: fakeLocations[3], // Liverpool
-    arrivalDateTime: DateTime.now().add(Duration(days: 2, hours: 2)), // 2 hours ride
-    driver: fakeUsers[1], // Bob
-    availableSeats: 2,
-    pricePerSeat: 10.0,
-  ),
-  Ride(
-    departureLocation: fakeLocations[4], // Leeds
-    departureDate: DateTime.now().add(Duration(days: 3)), // In 3 days
-    arrivalLocation: fakeLocations[5], // Glasgow
-    arrivalDateTime: DateTime.now().add(Duration(days: 3, hours: 4)), // 4 hours ride
-    driver: fakeUsers[2], // Charlie
-    availableSeats: 4,
-    pricePerSeat: 20.0,
-  ),
-  Ride(
-    departureLocation: fakeLocations[6], // Sheffield
-    departureDate: DateTime.now().add(Duration(days: 4)), // In 4 days
-    arrivalLocation: fakeLocations[7], // Bristol
-    arrivalDateTime: DateTime.now().add(Duration(days: 4, hours: 5)), // 5 hours ride
-    driver: fakeUsers[3], // Diane
-    availableSeats: 1,
-    pricePerSeat: 25.0,
-  ),
-  Ride(
-    departureLocation: fakeLocations[8], // Edinburgh
-    departureDate: DateTime.now().add(Duration(days: 5)), // In 5 days
-    arrivalLocation: fakeLocations[9], // Leicester
-    arrivalDateTime: DateTime.now().add(Duration(days: 5, hours: 3)), // 3 hours ride
-    driver: fakeUsers[4], // Ethan
-    availableSeats: 2,
-    pricePerSeat: 12.0,
-  ),
-];

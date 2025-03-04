@@ -48,6 +48,8 @@ class BlaColors {
 class BlaTextStyles {
   static TextStyle heading = TextStyle(fontSize: 28, fontWeight: FontWeight.w500);
 
+  static TextStyle title =  TextStyle(fontSize: 20, fontWeight: FontWeight.w400);
+
   static TextStyle body =  TextStyle(fontSize: 16, fontWeight: FontWeight.w400);
 
   static TextStyle label =  TextStyle(fontSize: 13, fontWeight: FontWeight.w400);
@@ -62,24 +64,20 @@ class BlaTextStyles {
 /// Bascially small (S), medium (m), large (l), extra large (x), extra extra large (xxl)
 ///
 class BlaSpacings {
-  static const double xs = 8;
   static const double s = 12;
   static const double m = 16; 
   static const double l = 24; 
   static const double xl = 32; 
   static const double xxl = 40; 
 
-  static const double radiusSmall = 8;
   static const double radius = 16; 
   static const double radiusLarge = 24; 
 }
 
 
 class BlaSize {
-  static const double iconSmall = 18;
   static const double icon = 24;
 }
-
 
 ///
 /// Definition of App Theme.

@@ -1,4 +1,4 @@
-import '/model/ride/locations.dart';
+import 'package:week_3_blabla_project/model/ride/locations.dart';
 
 import '../../utils/date_time_util.dart';
 import '../user/user.dart';
@@ -44,10 +44,6 @@ class Ride {
   }
 
   int get remainingSeats => availableSeats - passengers.length;
-
-  get departure => departureLocation;
-
-  get arrival => arrivalLocation;
 
   @override
   String toString() {

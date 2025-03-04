@@ -18,7 +18,7 @@ class Location {
   final String name;
   final Country country;
 
-  const Location({required this.name, required this.country,});
+  const Location({required this.name, required this.country});
 
   // Copy constructor
   Location.copy(Location other)
@@ -48,38 +48,4 @@ class Street {
   final Location city;
 
   const Street({required this.name, required this.city});
-}
-
-///
-/// This model describes a search result.
-/// It can be either a Location or a Street.
-///
-
-class SearchResult {
-  final dynamic item; // Either Location or Street
-  final bool isRecent;
-
-  SearchResult({required this.item, this.isRecent = false});
-
-  String get name {
-    if (item is Location) {
-      return (item as Location).name;
-    } else if (item is Street) {
-      return (item as Street).name;
-    }
-    return '';
-  }
-
-  String get description {
-    if (item is Location) {
-      return (item as Location).country.name;
-    } else if (item is Street) {
-      final street = item as Street;
-      return '${street.city.name}, ${street.city.country.name}';
-    }
-    return '';
-  }
-
-  bool get isStreet => item is Street;
-  bool get isCity => item is Location;
 }

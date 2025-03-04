@@ -17,11 +17,12 @@ class BlaIconButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+ 
     return MouseRegion(
       cursor: SystemMouseCursors.click,
       child: GestureDetector(
-          onTap: onPressed,
-          child: Icon(icon, size: BlaSize.icon, color: BlaColors.primary)),
+        onTap: onPressed,
+        child: Icon(icon, size: BlaSize.icon, color: BlaColors.primary)),
     );
   }
 }
