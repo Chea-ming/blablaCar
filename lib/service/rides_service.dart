@@ -1,4 +1,5 @@
 import 'package:week_3_blabla_project/model/ride_pref/ride_pref.dart';
+import 'package:week_3_blabla_project/repository/ride_repository.dart';
 import '../model/ride/ride.dart';
 
 ////
@@ -7,31 +8,26 @@ import '../model/ride/ride.dart';
 ///
 class RidesService {
 
-  static final RidesService _instance = RidesService._internal();
+  static RidesService? _instance;
 
-  late List<Ride> _ridesRepository;
+  final RidesRepositories repository;
 
-  RidesService._internal();
+  RidesService._internal(this.repository);
 
-  factory RidesService() {
-    return _instance;
+  static void initialize(RidesRepositories repository) {
+    _instance ??= RidesService._internal(repository);
   }
 
-  static void initialize(List<Ride> ridesRepository) {
-    _instance._ridesRepository = ridesRepository;
-  }
-
-  List<Ride> getRides(RidePreference preferences, RidesFilter? filter) {
-    var filteredRides = _ridesRepository.where((ride) =>
-        ride.departureLocation == preferences.departure &&
-        ride.arrivalLocation == preferences.arrival);
-
-    if (filter != null && filter.acceptPets) {
-      filteredRides = filteredRides.where((ride) => ride.acceptsPets);
+  static RidesService get instance {
+    if (_instance == null) {
+      throw Exception(
+          "You should initialize your service first. Please call the initialize");
     }
+    return _instance!;
+  }
 
-    return filteredRides.toList();
-    
+  List<Ride> getRides (RidePreference preference, RidesFilter? filter) {
+    return repository.getRides(preference, filter);
   }
  
 }

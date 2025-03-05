@@ -61,12 +61,12 @@ class MockRideRepository extends RidesRepositories {
           phone: '0123456789',
           profilePicture: '',
           verifiedProfile: true),
-      availableSeats: 0,
+      availableSeats: 2,
       pricePerSeat: 5.0,
       filter: RidesFilter(acceptPets: true),
     );
 
-    r2 = Ride(
+    r5 = Ride(
       departureLocation: Location(name: "Battambang", country: Country.cam),
       arrivalLocation: Location(name: "SiemReap", country: Country.cam),
       departureDate: DateTime(now.year, now.month, now.day, 5, 0),
@@ -78,7 +78,7 @@ class MockRideRepository extends RidesRepositories {
           phone: '0123456789',
           profilePicture: '',
           verifiedProfile: true),
-      availableSeats: 0,
+      availableSeats: 1,
       pricePerSeat: 5.0,
       filter: RidesFilter(acceptPets: false),
     );
@@ -88,6 +88,13 @@ class MockRideRepository extends RidesRepositories {
   
   @override
   List<Ride> getRides(RidePreference preference, RidesFilter? filter) {
-    return [r1, r2, r3, r4, r5];
+    List<Ride> rides = [r1, r2, r3, r4, r5];
+    return rides.where((ride) =>
+       ride.departureLocation.name == preference.departure.name &&
+          ride.arrivalLocation.name == preference.arrival.name &&
+          ride.departureDate.isAfter(preference.departureDate)
+          && ride.availableSeats >= preference.requestedSeats
+          && (filter == null || filter.acceptPets == ride.filter.acceptPets)
+    ).toList();
   }
 }
