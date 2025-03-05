@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:week_3_blabla_project/screens/rides/widgets/ride_pref_bar.dart';
+import 'package:week_3_blabla_project/screens/rides/widgets/ride_pref_modal.dart';
+import 'package:week_3_blabla_project/service/ride_prefs_service.dart';
  
-import '../../dummy_data/dummy_data.dart';
 import '../../model/ride/ride.dart';
 import '../../model/ride_pref/ride_pref.dart';
 import '../../service/rides_service.dart';
@@ -22,9 +23,9 @@ class RidesScreen extends StatefulWidget {
 
 class _RidesScreenState extends State<RidesScreen> {
  
-  RidePreference currentPreference  = fakeRidePrefs[0];   // TODO 1 :  We should get it from the service
+  RidePreference? currentPreference  = RidePrefService.instance.currentPreference;  
 
-  List<Ride> get matchingRides => RidesService.getRidesFor(currentPreference);
+  List<Ride> get matchingRides => RidesService.instance.getRides(currentPreference!, null);
 
   void onBackPressed() {
     Navigator.of(context).pop();     //  Back to the previous view
@@ -32,10 +33,23 @@ class _RidesScreenState extends State<RidesScreen> {
 
   void onPreferencePressed() async {
         // TODO  6 : we should push the modal with the current pref
+        final newPreference = await showModalBottomSheet<RidePreference>(
+          isScrollControlled: true,
+          context: context,
+          builder: (BuildContext context) {
+            return RidePrefModal(
+              currentPreference: currentPreference!,
+            );
+          },
+        );
 
         // TODO 9 :  After pop, we should get the new current pref from the modal 
 
         // TODO 10 :  Then we should update the service current pref,   and update the view
+        RidePrefService.instance.addPreference(newPreference!);
+        setState(() {
+          currentPreference = newPreference;
+        });
   }
 
   void onFilterPressed() {
@@ -51,7 +65,7 @@ class _RidesScreenState extends State<RidesScreen> {
         children: [
           // Top search Search bar
           RidePrefBar(
-              ridePreference: currentPreference,
+              ridePreference: currentPreference!,
               onBackPressed: onBackPressed,
               onPreferencePressed: onPreferencePressed,
               onFilterPressed: onFilterPressed),
