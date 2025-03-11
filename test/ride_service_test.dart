@@ -27,9 +27,9 @@ void main() {
       expect(results.length, 4);
 
       print('T1: Create a ride preference - from Battambang - to SiemReap - today - 1 passenger');
-      results.forEach((element) {
+      for (var element in results) {
         print('Ride: ${element.departureLocation.name} - ${element.arrivalLocation.name} - ${DateFormat('HH:mm').format(element.departureDate)} - ${DateFormat('HH:mm').format(element.arrivalDateTime)} - ${element.driver.firstName}');
-      });
+      }
     });
 
     test('T2: Create a ride preference - from Battambang - to SiemReap - today - 1 passenger - Pet Allowed', () async {
@@ -50,9 +50,9 @@ void main() {
       expect(results.length, 1);
 
       print('T2: Create a ride preference - from Battambang - to SiemReap - today - 1 passenger - Pet Allowed');
-      results.forEach((element) {
+      for (var element in results) {
         print('Ride: ${element.departureLocation.name} - ${element.arrivalLocation.name} - ${DateFormat('HH:mm').format(element.departureDate)} - ${DateFormat('HH:mm').format(element.arrivalDateTime)} - ${element.driver.firstName}');
-      });
+      }
     });
 
     

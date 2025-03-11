@@ -1,3 +1,6 @@
+
+import 'package:week_3_blabla_project/repository/ride_preference_listener.dart';
+
 import '../model/ride_pref/ride_pref.dart';
 import '../repository/ride_preferences_repository.dart';
 
@@ -58,7 +61,26 @@ class RidePrefService {
     return repository.getPastPreferences();
   }
 
+  void onRidePreferenceSelcted(RidePreference selectedPreference) {
+    print('Selected preference : $selectedPreference');
+  }
+
   void addPreference(RidePreference preference) {
     return repository.addPreference(preference);
+  }
+
+  // List of listeners
+  final List<RidePreferenceListener> _listeners = [];
+
+  // Add a listener
+  void addListener(RidePreferenceListener listener) {
+    _listeners.add(listener);
+  }
+
+  // Notify all listeners
+  void notifyListeners() {
+    for (var listener in _listeners) {
+      listener.onRidePreferenceSelcted(_currentPreference!);
+    }
   }
 }
