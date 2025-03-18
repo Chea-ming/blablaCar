@@ -7,16 +7,17 @@ class ColorTap extends StatelessWidget {
   final VoidCallback onTap;
 
   const ColorTap({
-    Key? key,
+    super.key,
     required this.type,
     required this.tapCount,
     required this.onTap,
-  }) : super(key: key);
+  });
 
   Color get backgroundColor => type == CardType.red ? Colors.red : Colors.blue;
 
   @override
   Widget build(BuildContext context) {
+    print("ColorTap Rebuilt");
     return GestureDetector(
       onTap: onTap,
       child: Container(

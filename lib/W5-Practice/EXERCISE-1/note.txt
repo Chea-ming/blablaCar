@@ -1,0 +1,5 @@
+I have implemented
+- abstract listener class in lib/repository/ride_preference_listener.dart
+- manage lists of listeners in lib/service/ride_prefs_service.dart
+- ConsoleLogger class in lib/repository/console_logger.dart
+- Test the servkce in test/listener_test.dart

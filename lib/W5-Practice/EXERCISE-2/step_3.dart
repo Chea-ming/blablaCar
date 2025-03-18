@@ -37,6 +37,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    print("Home Widget Rebuilt");
     return Scaffold(
       body:
           _currentIndex == 0
@@ -93,6 +94,7 @@ class ColorTapsScreen extends StatefulWidget {
 class ColorTapsScreenState extends State<ColorTapsScreen> {
   @override
   Widget build(BuildContext context) {
+    print("ColorTapsScreen Rebuilt");
     return Scaffold(
       appBar: AppBar(title: Text('Color Taps')),
       body: Column(
@@ -129,6 +131,7 @@ class ColorTap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("ColorTap Rebuilt");
     return GestureDetector(
       onTap: onTap,
       child: Container(
@@ -162,6 +165,7 @@ class StatisticsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print("StatisticsScreen Rebuilt");
     return Scaffold(
       appBar: AppBar(title: Text('Statistics')),
       body: Center(

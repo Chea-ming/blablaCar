@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:week_3_blabla_project/EXERCISE-2/models/colors_counter.dart';
+import 'package:week_3_blabla_project/W5-Practice/EXERCISE-2/models/colors_counter.dart';
 import 'screens/color_tap_screen.dart';
 import 'screens/statistic_screen.dart';
 
@@ -28,6 +28,7 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    print("Home Widget Rebuilt");
     return Scaffold(
       body: _currentIndex == 0 ? ColorTapsScreen() : StatisticsScreen(),
       bottomNavigationBar: BottomNavigationBar(
